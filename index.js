@@ -47,18 +47,13 @@ const student = {
 // typeof item[1] === "object" ? studentInfo(item[1]) : item;
 
 function studentInfo(student) {
-  const resultArr = Object.entries(student).map((item) => {
+  return Object.entries(student).map((item) => {
     if (typeof item[1] === "object") {
       return studentInfo(item[1]);
     } else {
       return item;
     }
-  }).flat(Infinity);
-  resultArr.forEach((item,numb) => {
-    if (numb === 0 || numb % 2 === 0 && item[numb] !== undefined) {
-      console.log (`${resultArr[numb]}: ${resultArr[numb + 1]}`)
-    }
-  })
+  }).flat(Infinity).join(' ')
 }
 
 // 3.1 Создать числовой массив и проинициализировать его из 25 элементов.
