@@ -49,11 +49,11 @@ const student = {
 function studentInfo(student) {
   return Object.entries(student).map((item) => {
     if (typeof item[1] === "object") {
-      studentInfo(item[1]);
+      return studentInfo(item[1]);
     } else {
       return item;
     }
-  });
+  }).flat();
 }
 
 // 3.1 Создать числовой массив и проинициализировать его из 25 элементов.
