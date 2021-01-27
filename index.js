@@ -51,7 +51,7 @@ function studentInfo(student) {
     if (typeof item[1] === "object") {
       return studentInfo(item[1]);
     } else {
-      return item;
+      return `${item[0]}: ${item[1]};` ;
     }
   }).flat(Infinity).join(' ')
 }
