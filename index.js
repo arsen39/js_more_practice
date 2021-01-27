@@ -2,7 +2,7 @@
 // (например n=4 , 1+2+3+4)
 
 function customSummator(n) {
-  if (n < 1 && Number.isInteger(n)) {
+  if (n < 1 || !Number.isInteger(n)) {
     throw new RangeError();
   }
   if (typeof n !== "number") {
@@ -100,7 +100,7 @@ class EBook extends Book {
 // вывод buzz вместо чисел, кратных 5;
 
 function fizzBuzzer (n) {
-  if (n <= 1 && Number.isInteger(n)) {
+  if (n <= 1 || !Number.isInteger(n)) {
     throw new RangeError();
   }
   if (typeof n !== "number") {
