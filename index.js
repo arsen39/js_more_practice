@@ -36,7 +36,7 @@ const faculty = {
 const student = {
   name: "John",
   surname: "Dou",
-  ifMale: true,
+  isMale: true,
   contactData: {
     tel: 380678835265,
     email: "john99dou@testmail.io",
@@ -47,13 +47,18 @@ const student = {
 // typeof item[1] === "object" ? studentInfo(item[1]) : item;
 
 function studentInfo(student) {
-  return Object.entries(student).map((item) => {
+  const resultArr = Object.entries(student).map((item) => {
     if (typeof item[1] === "object") {
       return studentInfo(item[1]);
     } else {
       return item;
     }
-  }).flat();
+  }).flat(Infinity);
+  resultArr.forEach((item,numb) => {
+    if (numb === 0 || numb % 2 === 0 && item[numb] !== undefined) {
+      console.log (`${resultArr[numb]}: ${resultArr[numb + 1]}`)
+    }
+  })
 }
 
 // 3.1 Создать числовой массив и проинициализировать его из 25 элементов.
